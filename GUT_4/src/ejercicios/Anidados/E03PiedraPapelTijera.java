@@ -12,11 +12,17 @@ public class E03PiedraPapelTijera {
 		
 		System.out.println("Vamos a jugar a piedra papel o tijera\n"
 							+ "¿Quieres jugar? [s/n]");
-		continuar = teclado.toString();
-		// while (continuar.equalsIgnoreCase("s"));{
+		continuar = teclado.next();
+	
+		while (continuar.equals("s")){
 		
 		 System.out.println("¿piedra, papel o tijera?");
-		 respuestausuario = teclado.toString();
+		 respuestausuario = teclado.next();
+		 System.out.println("Has puesto "+respuestausuario);
+		 if(!(respuestausuario.equals("tijera") || respuestausuario.equals("papel") || respuestausuario.equals("piedra"))){
+			 	System.out.println("Tu respuesta no es correcta, prueba otra vez");
+			 	continue;}
+		 	 
 			
 		 switch ((int) (Math.random() * 3 + 1)) {
 				case 1:
@@ -32,17 +38,20 @@ public class E03PiedraPapelTijera {
 			if (respuestamaquina.equals(respuestausuario))
 				System.out.println("Has EMPATADO, porque "+ respuestamaquina + " y " + respuestausuario + " son iguales.");
 			else {
-				System.out.println("He sacado " + respuestamaquina);
+				System.out.println("La maquina ha sacado " + respuestamaquina);
 				if (respuestamaquina.equals("piedra")
-					&& respuestausuario.equals("tijeras")
+					&& respuestausuario.equals("tijera")
 					|| respuestamaquina.equals("papel")
 					&& respuestausuario.equals("piedra")
 					|| respuestamaquina.equals("tijera")
 					&& respuestausuario.equals("papel"))
-					System.out.println("He GANADO.");
+					System.out.println("La maquina ha ganado.");
 				else
-					System.out.println("He PERDIDO");
+					System.out.println("La maquina ha perdido");
+				
 			}
+			System.out.println("¿Quieres volver a jugar? [s/n]");
+			continuar = teclado.next();
 		}
-	//}
+	}
 }

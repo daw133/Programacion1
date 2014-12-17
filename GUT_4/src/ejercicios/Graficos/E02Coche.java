@@ -5,45 +5,35 @@ import graphics.*;
 public class E02Coche {
 
 	public static void main(String[] args) throws InterruptedException {
-		Rectangle rectangulo, rectangulo2, rectangulo3, rectangulo4;
-		Ellipse rueda, rueda2;
+		Rectangle cuadrado, cuadrado1;
+		Ellipse rueda1, rueda2;
 		int ancho = 90;
 
-		rectangulo = new Rectangle(30, 20, ancho, 35);
-		rectangulo.setColor(Color.RED);
-		rectangulo.fill();
+		cuadrado=new Rectangle(75,130,100,50);
+		cuadrado1=new Rectangle(25,180,200,50);
+		rueda1=new Ellipse(25,200,50,50);
+		rueda2=new Ellipse(175,200,50,50);
 
-		rectangulo2 = new Rectangle(107, 37, 30, 18);
-		rectangulo2.setColor(Color.RED);
-		rectangulo2.fill();
-
-		rectangulo3 = new Rectangle(50, 25, 18, 15);
-		rectangulo3.setColor(Color.BLACK);
-		rectangulo3.fill();
-
-		rectangulo4 = new Rectangle(80, 25, 18, 15);
-		rectangulo4.setColor(Color.BLACK);
-		rectangulo4.fill();
-
-		rueda = new Ellipse(35, 45, 20, 20);
-		rueda.setColor(Color.BLACK);
-		rueda.fill();
-
-		rueda2 = new Ellipse(95, 45, 20, 20);
+		cuadrado.setColor(Color.RED);
+		cuadrado.fill();
+		cuadrado1.setColor(Color.GRAY);
+		cuadrado1.fill();
+		rueda1.setColor(Color.BLACK);
+		rueda1.fill();
 		rueda2.setColor(Color.BLACK);
 		rueda2.fill();
+		
 		int mover = 5;
 		while (true) {
-			mover=5;
-			for (int i = 0; i < 200; i++) {
-				Thread.sleep(20);
-				rectangulo.translate(mover, 0);
-				rectangulo2.translate(mover, 0);
-				rectangulo3.translate(mover, 0);
-				rectangulo4.translate(mover, 0);
-				rueda.translate(mover, 0);
+			for (int i = 0; i < 45; i++) {
+				Thread.sleep(50);
+				cuadrado.translate(mover, 0);
+				cuadrado1.translate(mover, 0);
+				rueda1.translate(mover, 0);
 				rueda2.translate(mover, 0);
-				if (i==99) mover=-mover;
+				System.out.println(i);
+
+				if (i==44) mover=-mover;
 			}
 
 		}

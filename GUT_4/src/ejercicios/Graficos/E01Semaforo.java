@@ -53,7 +53,6 @@ public class E01Semaforo {
 			Thread.sleep(5000);
 			circulo1.setColor(Color.BLACK);
 			circulo1.fill();
-			// circulo.draw();
 
 		}
 
